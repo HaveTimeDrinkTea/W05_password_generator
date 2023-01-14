@@ -13,11 +13,12 @@ var lowerCasedCharacters = ['a','b','c','d','e','f','g','h','i','j','k','l','m',
 // Array of uppercase characters to be included in password
 var upperCasedCharacters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 
-var pwdLen = "12";
-var isNum = true;
-var isSpec = true;
-var isLower = true;
-var isUpper = true;
+var pwdLen;
+var isNum;
+var isSpec;
+var isLower;
+var isUpper;
+var defaultOptionArray = [true, true, true, true];
 var userOptionArray;
 
 // Function to prompt user for password options
@@ -30,7 +31,18 @@ function getPasswordOptions() {
 };
 
 getPasswordOptions();
-userOptionArray = [isNum, isSpec, isLower, isUpper];
+
+// check for all False options and also if password length is zero or null
+  if (!(isNum) && !(isSpec) && !(isLower) && !(isUpper)) {
+    userOptionArray = defaultOptionArray;
+  } else {
+    userOptionArray = [isNum, isSpec, isLower, isUpper];
+};
+
+if ((pwdLen === 0) || (pwdLen === null) || (pwdLen === undefined)) {
+  pwdLen = "12";
+};
+
 console.log(userOptionArray);
 
 var userPwdArray;
@@ -61,6 +73,7 @@ function prepArray() {
         }
     }
 };   
+
 
 prepArray();
 console.log("before pop");
