@@ -1,6 +1,7 @@
 # Ignore unwanted directories
 **/.DS_Store
 **/.vscode
+assets/testing.js
 
 # Logs
 logs
