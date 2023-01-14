@@ -95,7 +95,7 @@ var pwdLen = "12";
 var isNum = true;
 var isSpec = true;
 var isLower = true;
-var isUpper = true;
+var isUpper = false;
 
 // Function to prompt user for password options
 function getPasswordOptions() {
