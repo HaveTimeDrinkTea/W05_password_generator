@@ -33,7 +33,7 @@ getPasswordOptions();
 userOptionArray = [isNum, isSpec, isLower, isUpper];
 console.log(userOptionArray);
 
-var userPwdArray;
+var userPwdArray = [null];
 var defaultPwdArray = ((numericCharacters.concat(specialCharacters)).concat(lowerCasedCharacters)).concat(upperCasedCharacters);
 
 // function for preparing an array of selected characters
@@ -42,19 +42,19 @@ function prepArray() {
         if (userOptionArray[i]) {
             switch (i) {
                 case 0:
-                    userPwdArray = numericCharacters.concat(userPwdArray);
+                    userPwdArray = userPwdArray.concat(numericCharacters);
                     console.log("0:", userPwdArray);
                     break;
                 case 1: 
-                    userPwdArray = specialCharacters.concat(userPwdArray);
+                    userPwdArray = userPwdArray.concat(specialCharacters);
                     console.log("1:", userPwdArray);
                     break;  
                 case 2:
-                    userPwdArray = lowerCasedCharacters.concat(userPwdArray);
+                    userPwdArray = userPwdArray.concat(lowerCasedCharacters);
                     console.log("2:", userPwdArray);
                     break;
                 case 3:     
-                    userPwdArray = upperCasedCharacters.concat(userPwdArray);
+                    userPwdArray = userPwdArray.concat(upperCasedCharacters);
                     console.log("3:", userPwdArray);
                     break;          
             }
@@ -63,62 +63,77 @@ function prepArray() {
 };   
 
 prepArray();
-console.log("before pop");
+console.log("before shift");
 console.log(userPwdArray);
 
-userPwdArray.pop();
-console.log("after pop");
+userPwdArray.shift();
+console.log("after shift");
 console.log(userPwdArray);
 
 
 
 
-// function for randomly sorting an array of selected characters using the The Fisher Yates Method
-// the for loop in this function is taken from w3schools.com
+
+// let isNum = true;
+// let isSpec = false;
+// let isLower = true;
+// let isUpper = false;
+
+// // var test = (isvar ? "1" : "0") +  (isnum ? "1" : "0") +  (isspec ? "1" : "0");
+
+// // console.log(test);
+
+// var userOptionArray = [isNum, isSpec, isLower, isUpper];
+// console.log(userOptionArray);
+
+// // function isGetArray (element) {
+// //     element = (element ? true : null) 
+// // }
+
+// var numChar = ["1","2","3","4"];
+// var specChar = ["!", "@", "£", "$"];
+// var lowerChar = ["a", "b", "c", "d"];
+// var upperChar =["A","B", "C", "D"];
 
 
+// // var finalarray = ((numChar.concat(specChar)).concat(lowerChar)).concat(upperChar);
 
-function randomSortArray(anyArray) {
-  for (let i = anyArray.length -1; i > 0; i--) {
-    let j = Math.floor(Math.random() * (i + 1));
-    let k = anyArray[i];
-    anyArray[i] = anyArray[j];
-    anyArray[j] = k;
-  }
-}
+// // var tripledArray = originalArray.map(function(elementN) {
+// //     if (elementN) {
+// //         finalarray = finalarray.concat()
+// //     }
+// // });
 
+// var finalarray = [null];
 
+// for (let i = 0; i < userOptionArray.length; i++) {
+//     if (userOptionArray[i]) {
+//         switch (i) {
+//             case 0:
+//                 finalarray = numChar.concat(finalarray);
+//                 console.log("0:", finalarray);
+//                 break;
+//             case 1: 
+//                 finalarray = specChar.concat(finalarray);
+//                 console.log("1:", finalarray);
+//                 break;  
+//             case 2:
+//                 finalarray = lowerChar.concat(finalarray);
+//                 console.log("2:", finalarray);
+//                 break;
+//             case 3:     
+//                 finalarray = upperChar.concat(finalarray);
+//                 console.log("3:", finalarray);
+//                 break;          
+//         }
+//     }
+// }
 
-console.log("before sort");
-console.log(userPwdArray);
+// console.log("before pop");
+// console.log(finalarray);
 
-randomSortArray(userPwdArray);
+// finalarray.pop();
+// console.log("after pop");
+// console.log(finalarray);
 
-console.log("after sort");
-console.log(userPwdArray);
-
-// Function for getting a random element from an array
-function getRandom(arr) {
-
-
-}
-
-// Function to generate password with user input
-function generatePassword() {
-
-
-}
-
-// Get references to the #generate element
-var generateBtn = document.querySelector('#generate');
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector('#password');
-
-  passwordText.value = password;
-}
-
-// Add event listener to generate button
-generateBtn.addEventListener('click', writePassword);
+// // check if the array is null 
