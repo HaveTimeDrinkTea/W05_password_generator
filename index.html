@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+    <script src="https://kit.fontawesome.com/72c3290151.js" crossorigin="anonymous"></script>
     <title>Password Generator</title>
     <link rel="stylesheet" href="assets/style.css" />
   </head>
@@ -23,6 +25,10 @@
             placeholder="Your Secure Password"
             aria-label="Generated Password"
           ></textarea>
+          <div class="options">
+            <table id="optionsChoices">
+            </table>
+          </div>
         </div>
         <div class="card-footer">
           <button id="generate" class="btn">Generate Password</button>
@@ -30,5 +36,6 @@
       </div>
     </div>
     <script src="assets/script.js"></script>
+    <script src="assets/script_to_html.js"></script>
   </body>
 </html>
