@@ -82,16 +82,6 @@ function randomSortArray(anyArray) {
       anyArray[j] = k;
     }
   }
-  
-  // console.log("before sort");
-  // console.log(userPwdArray);
-  
-  // randomSortArray(userPwdArray);
-  
-  // console.log("after sort");
-  // console.log(userPwdArray);
-  
-
 
 
 // Function for getting a random element from an array
@@ -119,11 +109,6 @@ function prepUserPwd (userPwdArray, pwdLen) {
     };
 }
 
-// prepUserPwd (userPwdArray, pwdLen);
-
-// Function to generate password with user input
-// including checks for scenarios where user enter password lenght = 0 or null
-// and where all character choice options are false.
 
 function generatePassword() {
     getPasswordOptions();
@@ -132,6 +117,7 @@ function generatePassword() {
     randomSortArray(userPwdArray);
     prepUserPwd (userPwdArray, pwdLen);
 }
+
 
 
 // ==========================================================
