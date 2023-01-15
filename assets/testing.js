@@ -3,7 +3,7 @@
 
 // Array of special characters to be included in password
 var specialCharacters = ['@','%','+','\\','/',"'",'!','#','$','^','?',':',',',')','(','}','{',']','[','~','-','_','.'];
-
+console.log(specialCharacters.length);
 // Array of numeric characters to be included in password
 var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
@@ -13,7 +13,8 @@ var lowerCasedCharacters = ['a','b','c','d','e','f','g','h','i','j','k','l','m',
 // Array of uppercase characters to be included in password
 var upperCasedCharacters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 
-var pwdLen = "12";
+var defaultPwdLen = 12;
+var pwdLen;
 var isNum = true;
 var isSpec = true;
 var isLower = true;
@@ -27,10 +28,12 @@ function getPasswordOptions() {
   isSpec = confirm("Include special characters in your pasword: \n (Click OK to include or click CANCEL to exclude.)");
   isLower = confirm("Include lower case letters in your pasword: \n (Click OK to include or click CANCEL to exclude.)");
   isUpper = confirm("Include upper case letters in your pasword: \n (Click OK to include or click CANCEL to exclude.)");
+  pwdLen = parseInt(pwdLen);
+  userOptionArray = [isNum, isSpec, isLower, isUpper];
 };
 
 getPasswordOptions();
-userOptionArray = [isNum, isSpec, isLower, isUpper];
+console.log("pwdLen:", pwdLen, "is of", typeof pwdLen);
 console.log(userOptionArray);
 
 var userPwdArray = [null];
@@ -67,73 +70,68 @@ console.log("before shift");
 console.log(userPwdArray);
 
 userPwdArray.shift();
+
 console.log("after shift");
 console.log(userPwdArray);
 
+function randomSortArray(anyArray) {
+    for (let i = anyArray.length -1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      let k = anyArray[i];
+      anyArray[i] = anyArray[j];
+      anyArray[j] = k;
+    }
+  }
+  
+  console.log("before sort");
+  console.log(userPwdArray);
+  
+  randomSortArray(userPwdArray);
+  
+  console.log("after sort");
+  console.log(userPwdArray);
+  
 
 
 
-
-// let isNum = true;
-// let isSpec = false;
-// let isLower = true;
-// let isUpper = false;
-
-// // var test = (isvar ? "1" : "0") +  (isnum ? "1" : "0") +  (isspec ? "1" : "0");
-
-// // console.log(test);
-
-// var userOptionArray = [isNum, isSpec, isLower, isUpper];
-// console.log(userOptionArray);
-
-// // function isGetArray (element) {
-// //     element = (element ? true : null) 
-// // }
-
-// var numChar = ["1","2","3","4"];
-// var specChar = ["!", "@", "£", "$"];
-// var lowerChar = ["a", "b", "c", "d"];
-// var upperChar =["A","B", "C", "D"];
+// Function for getting a random element from an array
 
 
-// // var finalarray = ((numChar.concat(specChar)).concat(lowerChar)).concat(upperChar);
+function getRandom(arr) {
+    let pwdChosenChar;
+    let randNum = Math.floor(((Math.random()) * arr.length));
+    console.log("random number is:", randNum);
+    pwdChosenChar = arr[randNum];
+    console.log("chosen char:", pwdChosenChar);
+    return pwdChosenChar;
+}
 
-// // var tripledArray = originalArray.map(function(elementN) {
-// //     if (elementN) {
-// //         finalarray = finalarray.concat()
-// //     }
-// // });
+    
+// function to get a random password of the user specified length
+var finalUserPwd;
 
-// var finalarray = [null];
+function prepUserPwd (userPwdArray, pwdLen) {
+    finalUserPwd = getRandom(userPwdArray);
+    console.log("finalUserPwd here:", finalUserPwd);
+    for (let i = 1; i < pwdLen; i++) {
+        finalUserPwd = finalUserPwd + getRandom(userPwdArray);
+        console.log(i, ":", finalUserPwd);
+    };
+}
 
-// for (let i = 0; i < userOptionArray.length; i++) {
-//     if (userOptionArray[i]) {
-//         switch (i) {
-//             case 0:
-//                 finalarray = numChar.concat(finalarray);
-//                 console.log("0:", finalarray);
-//                 break;
-//             case 1: 
-//                 finalarray = specChar.concat(finalarray);
-//                 console.log("1:", finalarray);
-//                 break;  
-//             case 2:
-//                 finalarray = lowerChar.concat(finalarray);
-//                 console.log("2:", finalarray);
-//                 break;
-//             case 3:     
-//                 finalarray = upperChar.concat(finalarray);
-//                 console.log("3:", finalarray);
-//                 break;          
-//         }
-//     }
-// }
+prepUserPwd (userPwdArray, pwdLen);
 
-// console.log("before pop");
-// console.log(finalarray);
+// Function to generate password with user input
+// including checks for scenarios where user enter password lenght = 0 or null
+// and where all character choice options are false.
 
-// finalarray.pop();
-// console.log("after pop");
-// console.log(finalarray);
+function generatePassword() {
+    getPasswordOptions();
+    prepArray();
+    userPwdArray.shift();
+    randomSortArray(userPwdArray);
+    prepUserPwd (userPwdArray, pwdLen);
+}
 
-// // check if the array is null 
+generatePassword();
+
