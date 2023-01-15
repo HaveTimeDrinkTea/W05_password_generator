@@ -23,23 +23,28 @@ var userOptionArray;
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-  pwdLen = prompt("Enter your desired password length: \n (minimum 10 and maximum 64):", "12");
-  isNum = confirm("Include numbers in your pasword: \n (Click OK to include or click CANCEL to exclude.");
-  isSpec = confirm("Include special characters in your pasword: \n (Click OK to include or click CANCEL to exclude.)");
-  isLower = confirm("Include lower case letters in your pasword: \n (Click OK to include or click CANCEL to exclude.)");
-  isUpper = confirm("Include upper case letters in your pasword: \n (Click OK to include or click CANCEL to exclude.)");
-  pwdLen = parseInt(pwdLen);
-  userOptionArray = [isNum, isSpec, isLower, isUpper];
+    pwdLen = prompt("Enter your desired password length: \n (minimum 10 and maximum 64):", "12");
+    isNum = confirm("Include numbers in your pasword: \n (Click OK to include or click CANCEL to exclude.");
+    isSpec = confirm("Include special characters in your pasword: \n (Click OK to include or click CANCEL to exclude.)");
+    isLower = confirm("Include lower case letters in your pasword: \n (Click OK to include or click CANCEL to exclude.)");
+    isUpper = confirm("Include upper case letters in your pasword: \n (Click OK to include or click CANCEL to exclude.)");
+    pwdLen = parseInt(pwdLen);
+    userOptionArray = [isNum, isSpec, isLower, isUpper];
 };
 
-// getPasswordOptions();
-// console.log("pwdLen:", pwdLen, "is of", typeof pwdLen);
-// console.log(userOptionArray);
-
-var userPwdArray = [null];
+// User input validation here 
+var defaultPwdLen = 12;
+var defaultOptionArray = [true, true, true, true];
 var defaultPwdArray = ((numericCharacters.concat(specialCharacters)).concat(lowerCasedCharacters)).concat(upperCasedCharacters);
 
+
+
+
+
+
+
 // function for preparing an array of selected characters
+var userPwdArray = [null];
 function prepArray() { 
     for (let i = 0; i < userOptionArray.length; i++) {
         if (userOptionArray[i]) {
@@ -62,26 +67,21 @@ function prepArray() {
                     break;          
             }
         }
-    }
+    };
+    userPwdArray.shift();
 };   
 
-// prepArray();
-// console.log("before shift");
-// console.log(userPwdArray);
 
-// userPwdArray.shift();
-
-// console.log("after shift");
-// console.log(userPwdArray);
+// sorting the concatenated array randomly to ensure a even random pick of characters
 
 function randomSortArray(anyArray) {
     for (let i = anyArray.length -1; i > 0; i--) {
-      let j = Math.floor(Math.random() * (i + 1));
-      let k = anyArray[i];
-      anyArray[i] = anyArray[j];
-      anyArray[j] = k;
+        let j = Math.floor(Math.random() * (i + 1));
+        let k = anyArray[i];
+        anyArray[i] = anyArray[j];
+        anyArray[j] = k;
     }
-  }
+}
 
 
 // Function for getting a random element from an array
@@ -96,11 +96,12 @@ function getRandom(arr) {
     return pwdChosenChar;
 }
 
-    
+
 // function to get a random password of the user specified length
 var finalUserPwd;
 
 function prepUserPwd (userPwdArray, pwdLen) {
+    randomSortArray(userPwdArray);
     finalUserPwd = getRandom(userPwdArray);
     console.log("finalUserPwd here:", finalUserPwd);
     for (let i = 1; i < pwdLen; i++) {
@@ -113,9 +114,8 @@ function prepUserPwd (userPwdArray, pwdLen) {
 function generatePassword() {
     getPasswordOptions();
     prepArray();
-    userPwdArray.shift();
-    randomSortArray(userPwdArray);
-    prepUserPwd (userPwdArray, pwdLen);
+    prepUserPwd(userPwdArray, pwdLen);
+    return finalUserPwd;
 }
 
 
@@ -128,10 +128,9 @@ var generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector('#password');
-
-  passwordText.value = password;
+    var password = generatePassword();
+    var passwordText = document.querySelector('#password');
+    passwordText.value = password;
 }
 
 // Add event listener to generate button
