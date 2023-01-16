@@ -28,21 +28,22 @@ var isUpper = true;
 var userOptionArray;
 
 
-// User input validation here 
+// User input validation function. Called by getPasswordOptions() 
+var isUseDefault = false;
 
-function checkUserInput() {
+function checkUserInput(pwdLen, isNum, isSpec, isLower, isUpper) {
+    pwdLen = parseInt(pwdLen);
     // checks pwdLen input for zero, nulls and non-integer number
-    if (!(Number.isInteger(pwdLen)) || pwdLen < 10) {
-        console.log(pwdLen, "is a not integer or less than 10:", typeof pwdLen);
+    if (!(Number.isInteger(pwdLen)) || pwdLen < 10 || pwdLen > 64) {
+        console.log(pwdLen, "is a not integer or less than 10 or more than 64:", typeof pwdLen);
         pwdLen = defaultPwdLen;
         console.log("so I have to set your password legnth to", pwdLen);
-    } else {
-        pwdLen = parseInt(pwdLen);
-    }
+    } 
     // check for all false password options 
     if ((isNum === false) && (isSpec === false) && (isLower === false) && (isUpper === false)) {
-        console.log("all false you shit stirrer!");
+        isUseDefault = true; 
         userOptionArray = defaultOptionArray;
+        console.log("all false you shit stirrer! now I set use default flag to:", isUseDefault);
     } else {
         userOptionArray = [isNum, isSpec, isLower, isUpper];
     };

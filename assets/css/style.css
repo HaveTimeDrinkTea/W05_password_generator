@@ -10,30 +10,31 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #5c5d59;
+  background-color: var(--colorCyanDark);
+  color: var(--colorWhite);
   font-size: 62.5%;
 }
 
 body {
   font-family: sans-serif;
-  background-color: #f9fbfd;
+  background-color: var(--colorCyanDark);;
 }
 
 h1, h2, h3 {
   text-align: center;
-  color: #fff;
+  color: var(--colorWhite);
   font-size: 2rem;
 }
 
 h1 {
   text-align: center;
-  color: #fff;
+  color: var(--colorWhite);
   font-size: 2.5rem;
 }
 
 h2 {
   text-align: center;
-  color: rgb(36, 5, 159);
+  color: var(--colorWhite);
   font-size: 1.8rem;
 }
 
@@ -47,16 +48,16 @@ header {
   text-align: center;
   padding: 20px;
   padding-top: 0px;
-  color: hsl(206, 17%, 28%);
+  color: var(--colorWhite);
 }
 
 .card {
-  background-color: hsl(0, 0%, 100%);
+  background-color: var(--colorGreen);
   border-radius: 5px;
   border-width: 1px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
-  color: hsl(206, 17%, 28%);
-  font-size: 18px;
+  color: var(--colorWhite);
+  font-size: 2rem;
   margin: 0 auto;
   max-width: 800px;
   padding: 30px 40px;
@@ -66,17 +67,17 @@ header {
   content: " ";
   display: block;
   width: 100%;
-  background: #e7e9eb;
+  background-color: var(--colorGreen);
   height: 2px;
 }
 
 .card-body {
   min-height: 100px;
   font-size: 2rem;
-  color: rgb(14, 126, 207);
+  color: var(--colorGreen);
 }
 
-textarea {
+/* textarea {
   font-size: 3rem;
   color: rgb(207, 111, 14);
   background-color: rgb(14, 178, 207);
@@ -85,7 +86,7 @@ textarea {
   border: 10px solid rgb(251, 6, 6);
   border-radius: 4px;
   resize: none;
-}
+} */
 
 .card-footer {
   text-align: center;
@@ -95,7 +96,7 @@ textarea {
   content: " ";
   display: block;
   width: 100%;
-  background: #e7e9eb;
+  background: var(--colorGreen);
   height: 2px;
 }
 
@@ -106,19 +107,38 @@ textarea {
 }
 
 .btn {
-  border: none;
-  background-color: hsl(360, 91%, 36%);
-  border-radius: 25px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
-    0px;
-  color: hsl(0, 0%, 100%);
   display: inline-block;
-  font-size: 22px;
-  line-height: 22px;
-  margin: 16px 16px 16px 20px;
-  padding: 14px 34px;
-  text-align: center;
+}
+
+.buttonPW {
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
+  font-size: 2.2rem;
   cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: auto;
+  color: var(--colorWhite);
+  background-color: var(--colorElectricBlue);
+  border: solid 1px var(--colorWhite);
+  border-radius: 8px;
+}
+
+.buttonPW:hover, 
+.buttonPW:active,
+.buttonPW:visited
+ {
+  background-color: var(--colorRed);
+  box-shadow: 5px 5px var(--colorGreyLight);
+  color: var(--colorWhite);
+}
+
+.buttonPW:active {
+  background-color: var(--colorGreen);
+  box-shadow: 0 4px var(--colorTealLighter);
+  transform: translateY(4px);
+  color: var(--fontvintage);
 }
 
 button[disabled] {
@@ -134,21 +154,19 @@ button[disabled] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  border: none;
   display: block;
   width: 100%;
-  padding-top: 15px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 85px;
+  padding: 15px;
   font-size: 2rem;
+  color: var(--colorWhite);
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
-  border: 2px dashed #c0c7cf;
+  border: 5px solid #fff;
   border-radius: 6px;
   resize: none;
   overflow: hidden;
+  background-color: var(--colorOrange);
 }
 
 table, th, td {
