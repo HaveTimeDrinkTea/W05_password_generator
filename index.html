@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="assets/css/myfavcolours.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
-  <body onload="generatePasswordOnLoad()">
+  <body onload="generatePasswordOnLoad(); inputOptions();">
     <div class="wrapper">
       <header>
         <h1><i class="fa fa-user-secret" style="font-size: 3rem;" aria-hidden="true"></i> &nbsp;<i class="fa fa-commenting" aria-hidden="true"></i> Psst ... 
@@ -30,7 +30,7 @@
           ></textarea>
           <!-- add generate password button -->
           <div class="card-footer">
-            <button id="generate" class="btn buttonPW">Give Me Another Password</button> <button onclick="copyPwdText()" class="copyButton">Copy it</button>
+            <button id="generate" class="btn buttonPW">New Password</button> <button onclick="copyPwdText()" class="copyButton">Copy it</button>
           </div>
           <!-- add input parameters -->
           <div class="options">

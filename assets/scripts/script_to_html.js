@@ -1,5 +1,4 @@
 // copy text from text area
-
 function copyPwdText() {
     // Get the text field
     var copyText = document.getElementById("password");
@@ -26,10 +25,11 @@ function incText(isOption) {
     };
 };
 
-
-document.getElementById("optionsChoices").innerHTML = 
-    ("<tr><th colspan='4' class='userOptionTitle'>Password Options</th></tr>" 
-    + "<tr><th colspan='2'width='50%' class='userOption'>Desired Password Length:</th><td colspan='2' width='50%' class='userChoice'>" + defaultPwdLen + "</td></tr>"
-    + "<tr><th class='userOption'>Numbers:</th><td class='userChoice'>" + incText(isNum) + "</td><th class='userOption'>Special Characters:</th><td class='userChoice'>"+ incText(isSpec) +"</td></tr>"
-    + "<tr><th class='userOption'>Lower Case Letters:</th><td class='userChoice'>" + incText(isLower) + "</td><th class='userOption'>Upper Case Letters:</th><td class='userChoice'>"+ incText(isUpper) +"</td></tr>"
+function inputOptions() {
+    document.getElementById("optionsChoices").innerHTML = (
+        "<tr><th colspan='4' class='userOptionTitle'>Password Options</th></tr>" 
+        + "<tr><th colspan='2'width='50%' class='userOption'>Desired Password Length:</th><td colspan='2' width='50%' class='userChoice'>" + pwdLen + "</td></tr>"
+        + "<tr><th class='userOption'>Numbers:</th><td class='userChoice'>" + incText(isNum) + "</td><th class='userOption'>Special Symbols:</th><td class='userChoice'>"+ incText(isSpec) +"</td></tr>"
+        + "<tr><th class='userOption'>Lower Case Letters:</th><td class='userChoice'>" + incText(isLower) + "</td><th class='userOption'>Upper Case Letters:</th><td class='userChoice'>"+ incText(isUpper) +"</td></tr>"
     );
+}
