@@ -183,6 +183,7 @@ textarea {
   text-align: center;
 }
 
+/* Styling for the copy icon */
 .copyIcon {
   position: relative;
   top: 4.5rem; 
@@ -203,6 +204,8 @@ textarea {
   text-shadow: 2px 2px var(--colorWheat);
 }
 
+/* Styling for the card footer */
+
 .card-footer {
   text-align: center;
 }
@@ -220,6 +223,8 @@ textarea {
   display: block;
   clear: both;
 }
+
+/* Styling for the generate button */
 
 .btn {
   display: inline-block;
@@ -292,6 +297,8 @@ button[disabled] {
   margin-top: 30px;
 }
 
+/* Styling for the user options display */
+
 table {
   table-layout: fixed;
 }
@@ -337,6 +344,7 @@ table, th, td {
     text-align: center;
     font-size: 1.5rem;
   }
+  
   
   /* media queries  */
 

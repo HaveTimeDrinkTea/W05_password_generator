@@ -47,10 +47,10 @@ function checkUserInput() {
         isSpec = true;
         isLower = true;
         isUpper = true;
-        console.log("all false you shit stirrer!");
+        // console.log("user entered all false");
     } else {
         userOptionArray = [isNum, isSpec, isLower, isUpper];
-        console.log("user options are:", userOptionArray);
+        // console.log("user options are:", userOptionArray);
     };
 }
 
