@@ -21,11 +21,12 @@ var defaultPwdArray = ((numericCharacters.concat(specialCharacters)).concat(lowe
 
 //variables of user inputs for generating password
 let pwdLen;
-let isNum = false;
-let isSpec = false;
-let isLower = false;
-let isUpper = false;
+let isNum = true;
+let isSpec = true;
+let isLower = true;
+let isUpper = true;
 let userOptionArray;
+let userPwdArray;
 
 
 // User input validation function. Called by getPasswordOptions() 
@@ -38,13 +39,14 @@ function checkUserInput() {
         console.log(pwdLen, "is a not integer or less than 10 or more than 64:", typeof pwdLen);
         pwdLen = defaultPwdLen;
         console.log("so I have to set your password legnth to", pwdLen);
-    } 
+    };
     // check for all false password options 
     if ((isNum === false) && (isSpec === false) && (isLower === false) && (isUpper === false)) {
         userOptionArray = defaultOptionArray;
         console.log("all false you shit stirrer!");
     } else {
         userOptionArray = [isNum, isSpec, isLower, isUpper];
+        console.log("user options are:", userOptionArray);
     };
 }
 
@@ -69,37 +71,39 @@ function randomSortArray(anyArray) {
         let k = anyArray[i];
         anyArray[i] = anyArray[j];
         anyArray[j] = k;
-    }
+    };
+    return anyArray;
 }
 
 // function for preparing the array of all selected characters
-let userPwdArray = [null];
 
 function prepArray() { 
+    userPwdArray = [null];
     for (let i = 0; i < userOptionArray.length; i++) {
         if (userOptionArray[i]) {
             switch (i) {
                 case 0:
                     userPwdArray = userPwdArray.concat(numericCharacters);
-                    console.log("0:", userPwdArray);
+                    console.log("case 0 numerics:", userPwdArray);
                     break;
                 case 1: 
                     userPwdArray = userPwdArray.concat(specialCharacters);
-                    console.log("1:", userPwdArray);
+                    console.log("case 1 spec:", userPwdArray);
                     break;  
                 case 2:
                     userPwdArray = userPwdArray.concat(lowerCasedCharacters);
-                    console.log("2:", userPwdArray);
+                    console.log("case 2 lower:", userPwdArray);
                     break;
                 case 3:     
                     userPwdArray = userPwdArray.concat(upperCasedCharacters);
-                    console.log("3:", userPwdArray);
+                    console.log("case 3 upper:", userPwdArray);
                     break;          
             }
         }
     };
     userPwdArray.shift();           // remove the first null element in array
-    randomSortArray(userPwdArray);  // random sort the array again to make it even more random
+    randomSortArray(userPwdArray);  // random sort the array again to make it even 
+    console.log("The newly resorted array userPwdArray:", userPwdArray);
 };   
 
 // Function for getting a random element from an array
@@ -126,9 +130,9 @@ function prepUserPwd (userPwdArray, pwdLen) {
 
 
 function generatePassword() {
-    // Ask for user inputs
+    // Ask for user inputs and validate them
     getPasswordOptions();
-    // Check user inputs and then prepare the characters arrary
+    // Prepare the characters array
     prepArray(); 
     prepUserPwd(userPwdArray, pwdLen);
     return finalUserPwd;
@@ -158,6 +162,7 @@ function writePassword() {
     var password = generatePassword();
     var passwordText = document.querySelector('#password');
     passwordText.value = password;
+    inputOptions();
 }
 
 // Add event listener to generate button
