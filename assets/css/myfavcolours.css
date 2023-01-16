@@ -25,6 +25,9 @@
     --colorTealDark50: rgba(58, 128, 152, 0.5);
     --colorTealDarker: rgb(11, 70, 82);
     --colorTealDarker2: rgb(3, 52, 62);
+    --colorTealMedium: rgb(32, 157, 153);
+    --colorTealLighter: #d8e6e6;
+    --colorTealLight: #99cccc;
     --colorOrange: rgba(216, 95, 38, 1);
     --colorOrange50: rgba(216, 95, 38, 0.5);
     --colorOrange70: rgba(216, 95, 38, 0.7);
@@ -42,14 +45,14 @@
     --bgcolor:#607d8b;
     --bgcolordark: #313138;
     --bgcolorlight: #edc9c9;
-    --colorTealLighter: #d8e6e6;
-    --colorTealLight: #99cccc;
     --colorBrownDarker: #432a11;
     --colorYellowLight: #f4f491;
     --colorGreyLight: #b9b6b6;
-    --colorGrey: #696969;
-    --colorPink: #a45c84;
-    --colorBrown1: #be7e4a;
-    --colorCharcoalDark: #222222;
     --colorCharcoal: rgb(69, 69, 69);
+    --colorCharcoalDark: #444444;
+    --colorCharcoalDarker: #222222;
+    --colorPink: #a45c84;
+    --colorPinkDark: rgb(138, 66, 106);
+    --colorBrown1: #be7e4a;
+
 }

@@ -134,6 +134,16 @@ function generatePassword() {
     return finalUserPwd;
 }
 
+function generatePasswordOnLoad() {
+    pwdLen = defaultPwdLen;
+    userOptionArray = [true,true, true, true];
+    userPwdArray = defaultPwdArray;
+    prepUserPwd(userPwdArray, pwdLen);
+    var passwordText = document.querySelector('#password');
+    passwordText.value = finalUserPwd;
+}
+
+
 
 
 // ==========================================================

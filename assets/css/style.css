@@ -8,8 +8,8 @@ html,
 body,
 .wrapper {
   height: 100%;
-  margin: 0;
   padding: 0;
+  margin: 0;
   background-color: var(--colorCyanDark);
   color: var(--colorWhite);
   font-size: 62.5%;
@@ -17,7 +17,7 @@ body,
 
 body {
   font-family: sans-serif;
-  background-color: var(--colorCyanDark);;
+  background-color: var(--colorCyanDark);
 }
 
 h1, h2, h3 {
@@ -29,33 +29,116 @@ h1, h2, h3 {
 h1 {
   text-align: center;
   color: var(--colorWhite);
-  font-size: 2.5rem;
+  font-size: 2.8rem;
 }
 
 h2 {
   text-align: center;
   color: var(--colorWhite);
-  font-size: 1.8rem;
+  font-size: 2.5rem;
 }
 
 .wrapper {
   padding-top: 30px;
   padding-left: 20px;
   padding-right: 20px;
+  padding-bottom: 30px;
+  margin-bottom: 40px;
+}
+
+.wrapper::after {
+  margin-bottom: 40px;
+  content: " ";
+  display: block;
+  width: 100%;
+  height: 2px;
+}
+
+header,
+footer {
+  text-align: center;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 800px;
+  border: solid 0.5rem var(--colorWhite);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 8px 0px;
+  border-radius: 5px;
+  color: var(--colorWhite);
 }
 
 header {
-  text-align: center;
-  padding: 20px;
-  padding-top: 0px;
-  color: var(--colorWhite);
+  background-color: var(--colorElectricBlue);
+  margin-bottom: 40px; 
 }
+
+footer {
+  margin-top: 40px; 
+  margin-bottom: 40px; 
+  font-size: 1.5rem;
+  background-color: var(--colorPinkDark);
+}
+
+header::after,
+footer::after {
+  content: " ";
+  display: block;
+  width: 100%;
+  height: 2px;
+}
+
+footer nav,
+.footerP, 
+.footerTag, 
+.footerCopyright {
+  font-size: 1.5rem;
+}
+
+.footerP {
+  font-style: italic;
+  padding-bottom: 20px;
+}
+
+.footerTags {
+  font-weight: bold;
+  padding-bottom: 20px;
+  color: var(--colorWheat);
+}
+
+.footerCopyright {
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+
+footer a {
+  font-size: 2.5rem;
+  font-family: 'Lato', 'Helvetica', 'Arial', 'sans-serif';
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+  padding-right: 2px;
+  border: 0;
+  color: var(--fontvintage);
+}
+
+footer a,
+footer a:focus {
+  color: var(--fontvintage);
+}
+
+footer a:hover,
+footer a:focus:hover, 
+footer a.active:hover {
+  color: var(--colorElectricBlue);
+  text-shadow: 1px 1px var(--colorWheat);
+}
+
+/* main body of the password generator */
 
 .card {
   background-color: var(--colorGreen);
   border-radius: 5px;
-  border-width: 1px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
+  border: solid 0.5rem var(--colorWhite);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 8px 0px;
   color: var(--colorWhite);
   font-size: 2rem;
   margin: 0 auto;
@@ -74,19 +157,31 @@ header {
 .card-body {
   min-height: 100px;
   font-size: 2rem;
-  color: var(--colorGreen);
+  background-color: var(--colorGreen);
 }
 
-/* textarea {
-  font-size: 3rem;
-  color: rgb(207, 111, 14);
-  background-color: rgb(14, 178, 207);
-  padding: 12px 20px;
-  box-sizing: border-box;
-  border: 10px solid rgb(251, 6, 6);
-  border-radius: 4px;
-  resize: none;
-} */
+textarea {
+  text-align: center;
+  vertical-align: middle;
+};
+
+::placeholder { 
+  color: var(--colorWhite);
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+::-webkit-input-placeholder { /* Edge */
+  color: var(--colorWhite);
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+:-ms-input-placeholder { /* Internet Explorer */
+  color: var(--colorWhite);
+  font-size: 1.8rem;
+  text-align: center;
+}
 
 .card-footer {
   text-align: center;
@@ -114,7 +209,7 @@ header {
   display: inline-block;
   padding: 10px;
   margin: 10px;
-  font-size: 2.2rem;
+  font-size: 3rem;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
@@ -122,28 +217,33 @@ header {
   color: var(--colorWhite);
   background-color: var(--colorElectricBlue);
   border: solid 1px var(--colorWhite);
-  border-radius: 8px;
+  border-radius: 5px;
+  box-shadow: 5px 5px var(--colorCharcoal);
 }
 
 .buttonPW:hover, 
 .buttonPW:active,
-.buttonPW:visited
- {
+.buttonPW:visited {
   background-color: var(--colorRed);
-  box-shadow: 5px 5px var(--colorGreyLight);
+  box-shadow: 5px 5px var(--colorWheat);
   color: var(--colorWhite);
 }
 
 .buttonPW:active {
-  background-color: var(--colorGreen);
-  box-shadow: 0 4px var(--colorTealLighter);
+  background-color: var(--colorRed);
+  box-shadow: 0 4px var(--colorBrownMonkey);
   transform: translateY(4px);
   color: var(--fontvintage);
 }
 
+.copyButton {
+  display: none;
+}
+
+
 button[disabled] {
   cursor: default;
-  background: #c0c7cf;
+  background: var( --colorBrownMonkey);
 }
 
 .float-right {
@@ -157,33 +257,42 @@ button[disabled] {
   display: block;
   width: 100%;
   padding: 15px;
-  font-size: 2rem;
+  font-size: 3rem;
   color: var(--colorWhite);
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
-  border: 5px solid #fff;
-  border-radius: 6px;
+  border: 5px solid var(--colorWhite);
   resize: none;
   overflow: hidden;
   background-color: var(--colorOrange);
 }
 
+.options {
+  margin-top: 30px;
+}
+
+table {
+  table-layout: fixed;
+}
+
 table, th, td {
-  border: 0.1rem solid #fff;
+  border: 0.3rem solid var(--fontvintage);
   border-collapse: collapse;
   margin: auto;
+  padding: 3px;
+  width: 100%;
   }
   
   th {
-  color: #fff;
+  color: var(--colorWhite);
   text-align: left;
-  background-color: #209d99;
+  background-color: var(--colorTealDarker);
   padding: 1rem;
   }
   
   td {
-    background-color: #1a514f;
+    background-color: var(--colorTealDark);
     padding: 1rem;
   }
 
@@ -192,37 +301,39 @@ table, th, td {
   }
   
   .userChoice {
-    color: #fff;
+    color: var(--colorWhite);
     text-align: center;
     font-size: 2rem;
   }
   
   .userOption {
-    color: #fff;
+    color: var(--colorWhite);
     text-align: left;
     font-size: 1.5rem;
   }
 
   .userOptionTitle {
-    color: #fff;
+    color: var(--colorWhite);
     text-align: center;
     font-size: 1.5rem;
   }
+  
+  /* media queries  */
 
 @media (max-width: 690px) {
   .btn {
-    font-size: 1rem;
+    font-size: 2.2rem;
     margin: 16px 0px 0px 0px;
     padding: 10px 15px;
   }
 
   #password {
-    font-size: 1rem;
+    font-size: 2.2rem;
   }
 }
 
 @media (max-width: 500px) {
   .btn {
-    font-size: 0.8rem;
+    font-size: 2rem;
   }
 }
