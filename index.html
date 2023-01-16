@@ -10,16 +10,16 @@
     <link rel="stylesheet" href="assets/css/myfavcolours.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
-  <body>
+  <body onload="generatePasswordOnLoad()">
     <div class="wrapper">
       <header>
-        <h1>A Super Duper Password Generator</h1>
+        <h1><i class="fa fa-user-secret" style="font-size: 3rem;" aria-hidden="true"></i> &nbsp;<i class="fa fa-commenting" aria-hidden="true"></i> Psst ... 
+          <br><br> Want A  Password <i class="fa fa-unlock-alt" aria-hidden="true"></i>&nbsp;<i class="fa fa-question" aria-hidden="true"></i></h1>
       </header>
       <main> 
       <div class="card">
         <div class="card-header">
-          <h2><i class="fa fa-commenting" aria-hidden="true"></i> Psst ... 
-            <br><br> Want A <i class="fa fa-user-secret" style="font-size: 3rem;" aria-hidden="true"></i> Password?</h2>
+          <h2>Super Duper Password Generator</h2>
         </div>
         <div class="card-body">
           <textarea
@@ -30,7 +30,7 @@
           ></textarea>
           <!-- add generate password button -->
           <div class="card-footer">
-            <button id="generate" class="btn buttonPW">Generate Password</button>
+            <button id="generate" class="btn buttonPW">Generate Password</button> <button onclick="copyPwdText()" class="copyButton">Copy it</button>
           </div>
           <!-- add input parameters -->
           <div class="options">
@@ -42,13 +42,24 @@
       </div>
     </main>
     <footer>
-      <p class="footerP">
+      <div class="footerP">
         made with hours of dabbling in <i class="fa fa-html5" aria-hidden="true"></i>, <i class="fa fa-css3" aria-hidden="true"></i> and <i class="fab fa-bootstrap" aria-hidden="true"></i> and with many <i class="fa fa-coffee" aria-hidden="true"></i> of tea!
+      </div>
+      <div class="footerTags">
+        <i class="fa fa-leaf" aria-hidden="true"></i> &nbsp;&nbsp;&nbsp; #HaveTimeDrinkTea &nbsp;&nbsp;&nbsp; <i class="fa fa-heart" aria-hidden="true"></i> &nbsp;&nbsp;&nbsp; #Kindfulness &nbsp;&nbsp;&nbsp; <i class="fa fa-coffee aria-hidden="true"></i> &nbsp;&nbsp;&nbsp; #TeahouseStirrings
+        </div>
+        <nav>
+          <a href="mailto:havetimedrinktea@gmail.com" alt="Click this icon to email Pei Wang" title="email Pei Wang"> <i class="fa fa-envelope-open" aria-hidden="true"></i></a>
+          &nbsp;&nbsp;&nbsp; <a href="https://www.github.com/havetimedrinktea/" alt="Click this icon to visit Pei Wang's Github page." title="Visit Pei Wang's GitHub page" target="_blank"> <i class="fab fa-github" aria-hidden="true"></i></a>
+          &nbsp;&nbsp;&nbsp; <a href="https://www.linkedin.com/in/teanamu" alt="Click this icon to visit Pei Wang's LinkedIn profile." target="_blank"> <i class="fab fa-linkedin" aria-hidden="true"></i></a>
+          &nbsp;&nbsp;&nbsp; <a href="https://www.facebook.com/havetimedrinktea/" alt="Click this icon to visit Pei Wang's Facebook feed." title="Pei's facebook page" target="_blank"> <i class="fab fa-facebook" aria-hidden="true"></i></a>
+        </nav>
+        <div class="footerCopyright">
+          <br><br><strong><i class="fa fa-copyright" aria-hidden="true"></i> 2022 PEI WANG</strong>
+        </div>
+      </div>
       </p>
-      <p class="footerTags">
-        <i class="fa fa-dot-circle-o" aria-hidden="true"></i> &nbsp;&nbsp;&nbsp; <strong>#HaveTimeDrinkTea</strong> &nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" aria-hidden="true"></i> &nbsp;&nbsp;&nbsp; <strong>#Kindfulness</strong> &nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" aria-hidden="true"></i> &nbsp;&nbsp;&nbsp; <strong>#TeahouseStirrings</strong>  &nbsp;&nbsp;&nbsp; <i class="fa fa-dot-circle-o" aria-hidden="true"></i> 
-        <br><br><strong><i class="fa fa-copyright" aria-hidden="true"></i> 2022 PEI WANG</strong>
-      </p>
+      
     </footer>
     </div>
 

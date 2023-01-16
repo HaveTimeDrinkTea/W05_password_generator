@@ -8,8 +8,8 @@ html,
 body,
 .wrapper {
   height: 100%;
-  margin: 0;
   padding: 0;
+  margin: 0;
   background-color: var(--colorCyanDark);
   color: var(--colorWhite);
   font-size: 62.5%;
@@ -17,7 +17,7 @@ body,
 
 body {
   font-family: sans-serif;
-  background-color: var(--colorCyanDark);;
+  background-color: var(--colorCyanDark);
 }
 
 h1, h2, h3 {
@@ -43,6 +43,15 @@ h2 {
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 30px;
+  margin-bottom: 40px;
+}
+
+.wrapper::after {
+  margin-bottom: 40px;
+  content: " ";
+  display: block;
+  width: 100%;
+  height: 2px;
 }
 
 header,
@@ -77,15 +86,53 @@ footer::after {
   height: 2px;
 }
 
-.footerP {
+footer nav,
+.footerP, 
+.footerTag, 
+.footerCopyright {
   font-size: 1.5rem;
+}
+
+.footerP {
   font-style: italic;
+  padding-bottom: 20px;
 }
 
 .footerTags {
-  font-size: 1.5rem;
   font-weight: bold;
+  padding-bottom: 20px;
+  color: var(--colorWheat);
 }
+
+.footerCopyright {
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+
+footer a {
+  font-size: 2.5rem;
+  font-family: 'Lato', 'Helvetica', 'Arial', 'sans-serif';
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+  padding-right: 2px;
+  border: 0;
+  color: var(--fontvintage);
+}
+
+footer a,
+footer a:focus {
+  color: var(--fontvintage);
+}
+
+footer a:hover,
+footer a:focus:hover, 
+footer a.active:hover {
+  color: var(--colorElectricBlue);
+  text-shadow: 1px 1px var(--colorWheat);
+}
+
+/* main body of the password generator */
 
 .card {
   background-color: var(--colorGreen);
@@ -183,11 +230,16 @@ textarea {
 }
 
 .buttonPW:active {
-  background-color: var(--colorLemon);
+  background-color: var(--colorRed);
   box-shadow: 0 4px var(--colorBrownMonkey);
   transform: translateY(4px);
   color: var(--fontvintage);
 }
+
+.copyButton {
+  display: none;
+}
+
 
 button[disabled] {
   cursor: default;
@@ -218,6 +270,10 @@ button[disabled] {
 
 .options {
   margin-top: 30px;
+}
+
+table {
+  table-layout: fixed;
 }
 
 table, th, td {
