@@ -33,3 +33,13 @@ function inputOptions() {
         + "<tr><th class='userOption'>Lower Case Letters:</th><td class='userChoice'>" + incText(isLower) + "</td><th class='userOption'>Upper Case Letters:</th><td class='userChoice'>"+ incText(isUpper) +"</td></tr>"
     );
 }
+
+
+// copy to clipboard
+// code taken from https://codepen.io/MORHERO/pen/JLPzyB and amended accordingly
+
+document.getElementById('copyToClipboard').addEventListener('click', function() {
+    var text = document.getElementById('password');
+    text.select();
+    document.execCommand('copy');
+})

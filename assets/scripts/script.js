@@ -43,10 +43,14 @@ function checkUserInput() {
     // check for all false password options 
     if ((isNum === false) && (isSpec === false) && (isLower === false) && (isUpper === false)) {
         userOptionArray = defaultOptionArray;
-        console.log("all false you shit stirrer!");
+        isNum = true;
+        isSpec = true;
+        isLower = true;
+        isUpper = true;
+        // console.log("user entered all false");
     } else {
         userOptionArray = [isNum, isSpec, isLower, isUpper];
-        console.log("user options are:", userOptionArray);
+        // console.log("user options are:", userOptionArray);
     };
 }
 
