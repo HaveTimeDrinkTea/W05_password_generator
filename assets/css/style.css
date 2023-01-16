@@ -45,18 +45,55 @@ h2 {
   padding-bottom: 30px;
 }
 
-header {
+header,
+footer {
   text-align: center;
   padding: 20px;
-  padding-top: 0px;
-  color: var(--colorWhite);
+  margin: 0 auto;
+  max-width: 800px;
+  border: solid 0.5rem var(--colorWhite);
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 8px 0px;
+  border-radius: 5px;
+    color: var(--colorWhite);
 }
+
+header {
+  background-color: var(--colorElectricBlue);
+  margin-bottom: 40px; 
+}
+
+footer {
+  margin-top: 40px; 
+  margin-bottom: 40px; 
+  font-size: 1.5rem;
+  background-color: var(--colorPinkDark);
+}
+
+header::after,
+footer::after {
+  content: " ";
+  display: block;
+  width: 100%;
+  height: 2px;
+}
+
+.footerP {
+  font-size: 1.5rem;
+  font-style: italic;
+}
+
+.footerTags {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
 
 .card {
   background-color: var(--colorGreen);
   border-radius: 5px;
   border-width: 1px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 8px 0px;
   color: var(--colorWhite);
   font-size: 2rem;
   margin: 0 auto;
@@ -75,9 +112,31 @@ header {
 .card-body {
   min-height: 100px;
   font-size: 2rem;
-  color: var(--colorGreen);
+  background-color: var(--colorGreen);
 }
 
+textarea {
+  text-align: center;
+  vertical-align: middle;
+};
+
+::placeholder { 
+  color: var(--colorWhite);
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+::-webkit-input-placeholder { /* Edge */
+  color: var(--colorWhite);
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+:-ms-input-placeholder { /* Internet Explorer */
+  color: var(--colorWhite);
+  font-size: 1.8rem;
+  text-align: center;
+}
 
 .card-footer {
   text-align: center;
@@ -105,7 +164,7 @@ header {
   display: inline-block;
   padding: 10px;
   margin: 10px;
-  font-size: 2.2rem;
+  font-size: 3rem;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
@@ -133,7 +192,7 @@ header {
 
 button[disabled] {
   cursor: default;
-  background: #c0c7cf;
+  background: var( --colorBrownMonkey);
 }
 
 .float-right {
@@ -163,6 +222,7 @@ table, th, td {
   border-collapse: collapse;
   margin: auto;
   padding: 3px;
+  width: 100%;
   }
   
   th {
@@ -203,7 +263,7 @@ table, th, td {
 
 @media (max-width: 690px) {
   .btn {
-    font-size: 1rem;
+    font-size: 2.2rem;
     margin: 16px 0px 0px 0px;
     padding: 10px 15px;
   }
@@ -215,6 +275,6 @@ table, th, td {
 
 @media (max-width: 500px) {
   .btn {
-    font-size: 0.8rem;
+    font-size: 2rem;
   }
 }
