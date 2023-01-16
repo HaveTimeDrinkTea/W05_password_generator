@@ -20,12 +20,12 @@ var defaultPwdArray = ((numericCharacters.concat(specialCharacters)).concat(lowe
 
 
 //variables of user inputs for generating password
-var pwdLen;
-var isNum = true;
-var isSpec = true;
-var isLower = true;
-var isUpper = true;
-var userOptionArray;
+let pwdLen;
+let isNum = false;
+let isSpec = false;
+let isLower = false;
+let isUpper = false;
+let userOptionArray;
 
 
 // User input validation function. Called by getPasswordOptions() 
@@ -73,7 +73,7 @@ function randomSortArray(anyArray) {
 }
 
 // function for preparing the array of all selected characters
-var userPwdArray = [null];
+let userPwdArray = [null];
 
 function prepArray() { 
     for (let i = 0; i < userOptionArray.length; i++) {
@@ -142,6 +142,7 @@ function generatePasswordOnLoad() {
     var passwordText = document.querySelector('#password');
     passwordText.value = finalUserPwd;
 }
+
 
 
 
