@@ -34,6 +34,7 @@ In addition to that, I have created another Javascript that displays the passwor
 ### Further Improvements
 
 * to use bootstrap modal component to display the default (not visually appealing) Confirm dialog boxes. This allows me to style the modal boxes.
+* The copy button uses document.execCommand that is deprecated. Need to do further research on Clipboard API.
 * Check for user accessibility and load speed.
 
 
@@ -120,7 +121,7 @@ MIT License
 
 ### Extra Features
 * Generate a password on page load based on default parameters
-* Copy button in the textarea for user to copy the password to clipboard.
+* Copy button in the textarea for user to copy the password to clipboard. [See Further Improvements](#description)
 * Styled the webpage and included contact details.
 
 
