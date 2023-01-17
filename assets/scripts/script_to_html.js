@@ -15,7 +15,7 @@ function copyPwdText() {
   }
 
 
-// Display the finance report on webpage
+// Display the user input parameters on web page
 
 function incText(isOption) {
     if (isOption) {
@@ -37,9 +37,12 @@ function inputOptions() {
 
 // copy to clipboard
 // code taken from https://codepen.io/MORHERO/pen/JLPzyB and amended accordingly
+// Note that document.execCommand has been deprecated
+// go check out the alternative at https://www.freecodecamp.org/news/copy-text-to-clipboard-javascript/
 
 document.getElementById('copyToClipboard').addEventListener('click', function() {
     var text = document.getElementById('password');
     text.select();
     document.execCommand('copy');
 })
+
