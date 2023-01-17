@@ -16,10 +16,17 @@ In addition to that, I have created another Javascript that displays the passwor
 * Create a function to generate Confirm dialog boxes to ask user for inputs(password length and choice of character sets) when a button is pressed
 * Store user inputs into variables.
 * Conduct user input validation such that 
-  * password length to be between 10 and 64 (inclusive) and at least one of the 4 character sets (numeric, special, lower case and upper case letters) must be included. Use the default parameters where necessary.
-* Create functions to (1) create a main array of character sets based on user/default inputs, (2) randomly sort this main array using the Fisher-Yates method, (3) for each character in the password, generate a random integer that will pick up a character from this main array and (4) concatenate each character to form the desired password.
+  * password length to be between 10 and 64 (inclusive) and 
+  * at least one of the 4 character sets (numeric, special, lower case and upper case letters) must be included. Use the default parameters where necessary.
+* Create functions to
+  * create a main array of character sets based on user/default inputs, 
+  * randomly sort this main array using the Fisher-Yates method, 
+  * for each character in the password, generate a random integer that will pick up a character from this main array and 
+  * concatenate each character to form the desired password.
 * Return the generated password to the web page
-* Display default/user password generating input parameters on the webpage on page load (display default inputs) and when the button to generate password is clicked (display user inputs and where they fail the validation tests then display the default input parameters).
+* Display default/user password generating input parameters on the webpage 
+  * on page load (display default inputs) and 
+  * when the button to generate password is clicked (display user inputs and where they fail the validation tests then display the default input parameters).
 
 
 
@@ -46,7 +53,7 @@ SO THAT users can use the generator to create unique passwords by specifying whi
 
 The webpage must meet the following acceptance criteria:
 
-* Generate a password when the button is clicked and present a series of prompts for password criteria (Length of password (At least 10 characters but no more than 64 and character sets (Lowercase, Uppercase, Numeric and Special)
+* Generate a password when the button is clicked by presenting a series of prompts for password criteria (Length of password (At least 10 characters but no more than 64 and character sets (Lowercase, Uppercase, Numeric and Special)
 * Code should validate for each input and at least one character type should be selected
 * Once prompts are answered then the password should be generated and displayed in an alert or written to the page
 
@@ -92,8 +99,12 @@ MIT License
 ### Main Features
 * an online password generator on a styled webpage
 * show the user a randomly generated password based on the default parameters on page load
-* allow a user to generate a randomly generated password based on user's choice of password lenght and character set(s) by clicking a button.
-* check user parameter inputs: (1) password length has to be an integer otherwise the default number of 12 will be used, (2) password length has to be between 10 and 64 inclusive and (3) include at least one of the 4 character sets has to be chosen otherwise all the 4 character sets will be taken as default.
+* allow a user to generate a randomly generated password based on user's choice of 
+  * password length and character set(s) by clicking a button.
+  * check user parameter inputs: 
+    * password length has to be an integer otherwise the default number of 12 will be used
+    * password length has to be between 10 and 64 inclusive 
+    * include at least one of the 4 character sets has to be chosen otherwise all the 4 character sets will be taken as default.
 * Prepare a main array of the character set(s).
 * Randomly sort the array using the Fisher-Yates method
 * Generate a random number to be used as the index to the sorted array to pick up a character
