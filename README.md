@@ -15,7 +15,8 @@ In addition to that, I have created another Javascript that displays the passwor
 ### Methodology: Pseudo Code
 * Create a function to generate Confirm dialog boxes to ask user for inputs(password length and choice of character sets) when a button is pressed
 * Store user inputs into variables.
-* Conduct user input validation such that password length to be between 10 and 64 (inclusive) and at least one of the 4 character sets (numeric, special, lower case and upper case letters) must be included. Use the default parameters where necessary.
+* Conduct user input validation such that 
+  * password length to be between 10 and 64 (inclusive) and at least one of the 4 character sets (numeric, special, lower case and upper case letters) must be included. Use the default parameters where necessary.
 * Create functions to (1) create a main array of character sets based on user/default inputs, (2) randomly sort this main array using the Fisher-Yates method, (3) for each character in the password, generate a random integer that will pick up a character from this main array and (4) concatenate each character to form the desired password.
 * Return the generated password to the web page
 * Display default/user password generating input parameters on the webpage on page load (display default inputs) and when the button to generate password is clicked (display user inputs and where they fail the validation tests then display the default input parameters).
