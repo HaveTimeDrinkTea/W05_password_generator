@@ -8,7 +8,7 @@ It requires us to use JScript to build a password generator that can create pass
 
 The JScript will produce the output to the HTML as part of the starter code provided. I've grouped repeatedly called Jscript codes into modular functions where possible.
 
-In addition to that, I have created another Javascript that displays the password generating parameters (default or user input) to to the index.html. I have also styled the webpage and included a copy button to copy the generated password to the clipboard.
+In addition to that, I have created another Jscript that displays the password generating parameters (default or user input) to the index.html. I have also styled the webpage and included a copy button to copy the generated password to the clipboard.
 
 
 
