@@ -4,7 +4,7 @@
 
 This project is part of the Frontend Dev Bootcamp course challenge for the fifth week "JavaScript Intermediate". 
 
-It requires us to use JavaScript to create a password generator that can create passwords of a specified length and include certain character sets. Thye script should dynamically pick characters from at least one of the character sets provided. It should also restrict the password to have a lenght of 10 to 64 character.
+It requires us to use JavaScript to build a password generator that can create passwords of a specified length and include certain character sets. The script should dynamically pick characters from at least one of the character sets provided. It should also restrict the password to have a length of 10 to 64 character.
 
 The JScript will produce the output to the HTML as part of the starter code provided. I've grouped repeated called codes into modular functions where possible.
 
