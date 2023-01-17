@@ -48,7 +48,6 @@ The webpage must meet the following acceptance criteria:
 * Generate a password when the button is clicked and present a series of prompts for password criteria (Length of password (At least 10 characters but no more than 64 and character sets (Lowercase, Uppercase, Numeric and Special)
 * Code should validate for each input and at least one character type should be selected
 * Once prompts are answered then the password should be generated and displayed in an alert or written to the page
-  ** testing
 
 
 
@@ -93,10 +92,7 @@ MIT License
 * an online password generator on a styled webpage
 * show the user a randomly generated password based on the default parameters on page load
 * allow a user to generate a randomly generated password based on user's choice of password lenght and character set(s) by clicking a button.
-* check user parameter inputs
-  ** password length has to be an integer (otherwise the default number of 12 will be used)
-  ** password lenght has to be between 10 and 64 (inclusive)
-  ** at least one of the 4 character sets has to be chosen (otherwise all the 4 character sets will be taken as default)
+* check user parameter inputs: (1) password length has to be an integer otherwise the default number of 12 will be used, (2) password length has to be between 10 and 64 inclusive and (3) include at least one of the 4 character sets has to be chosen otherwise all the 4 character sets will be taken as default.
 * Prepare a main array of the character set(s).
 * Randomly sort the array using the Fisher-Yates method
 * Generate a random number to be used as the index to the sorted array to pick up a character
