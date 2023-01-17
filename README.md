@@ -16,7 +16,7 @@ In addition to that, I have created another Javascript that displays the passwor
 * Create a function to generate Confirm dialog boxes to ask user for inputs(password length and choice of character sets) when a button is pressed
 * Store user inputs into variables.
 	** Conduct user input validation
-		*** password lenght to be between 10 and 64 (inclusive)
+		*** password lenght to be between 10 and 64 (inclusive).
 		*** at least one of the 4 character sets (numeric, special, lower case and upper case letters) must be included.
 	** Use the default parameters where necessary.
 * Create functions to:
