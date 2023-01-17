@@ -1,8 +1,8 @@
-# Ignore unwanted directories
+# Ignore unwanted directories or files
 **/.DS_Store
 **/.vscode
-**/assets/scripts/testing.js
-**/assets/scripts/testing_temp.js
+assets/scripts/testing.js
+assets/scripts/testing_temp.js
 
 # Logs
 logs
