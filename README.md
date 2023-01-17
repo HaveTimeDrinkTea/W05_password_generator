@@ -84,7 +84,7 @@ Screen dump of the submitted webpage:
 
 ## Credits
 
-* Customize copy textarea content code from [Morhero](https://codepen.io/MORHERO/pen/JLPzyB)
+* Customize copy textarea content code from [Morhero](https://codepen.io/MORHERO/pen/JLPzyB).  Please note that this code uses document.execCommand which is deprecated and I will need to do further research on Clipboard API instead.
 * Randomly sort an array using the Fisher-Yates method [W3Schools - JavaScript Sorting Arrays](https://www.w3schools.com/js/js_array_sort.asp)
 
 
