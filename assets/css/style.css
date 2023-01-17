@@ -161,8 +161,12 @@ footer a.active:hover {
 }
 
 textarea {
+  height: 150px;
+  overflow: scroll;
   text-align: center;
   vertical-align: middle;
+  padding: 5px;
+  box-sizing: border-box;
 };
 
 ::placeholder { 
