@@ -48,7 +48,6 @@ The webpage must meet the following acceptance criteria:
 * Generate a password when the button is clicked and present a series of prompts for password criteria (Length of password (At least 10 characters but no more than 64 and character sets (Lowercase, Uppercase, Numeric and Special)
 * Code should validate for each input and at least one character type should be selected
 * Once prompts are answered then the password should be generated and displayed in an alert or written to the page
-
   ** testing
 
 
